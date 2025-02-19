@@ -65,7 +65,7 @@ public class Account extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "MaTK", "MaNV", "TenTK", "MatKhau", "LoaiTK"
+                "MaTK", "MaNV", "TenTK", "LoaiTK", "MatKhau"
             }
         ));
         jScrollPane1.setViewportView(jTable1);

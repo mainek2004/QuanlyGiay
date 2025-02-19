@@ -188,8 +188,8 @@
                     <Column editable="true" title="MaTK" type="java.lang.Object"/>
                     <Column editable="true" title="MaNV" type="java.lang.Object"/>
                     <Column editable="true" title="TenTK" type="java.lang.Object"/>
-                    <Column editable="true" title="MatKhau" type="java.lang.Object"/>
                     <Column editable="true" title="LoaiTK" type="java.lang.Object"/>
+                    <Column editable="true" title="MatKhau" type="java.lang.Object"/>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
