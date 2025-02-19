@@ -56,13 +56,13 @@ public class Storage extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "MaSP", "TenSP", "Loai", "Size", "SoLuong", "GiaBan"
+                "MaSP", "TenSP", "Hang", "PhanLoai", "Size", "SoLuong", "GiaBan"
             }
         ));
         jScrollPane1.setViewportView(jTable1);

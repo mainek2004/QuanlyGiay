@@ -1,6 +1,9 @@
+D:\QLyBanGiay\QuanLyBanGiay\src\main\java\GUI\Payroll_NV.java
 D:\QLyBanGiay\QuanLyBanGiay\src\main\java\GUI\Staff.java
+D:\QLyBanGiay\QuanLyBanGiay\src\main\java\GUI\InfoNV.java
 D:\QLyBanGiay\QuanLyBanGiay\src\main\java\GUI\DayOFF.java
 D:\QLyBanGiay\QuanLyBanGiay\src\main\java\GUI\Order.java
+D:\QLyBanGiay\QuanLyBanGiay\src\main\java\GUI\DayOff_NV.java
 D:\QLyBanGiay\QuanLyBanGiay\src\main\java\GUI\GoodRecipe.java
 D:\QLyBanGiay\QuanLyBanGiay\src\main\java\DAO\JDBC.java
 D:\QLyBanGiay\QuanLyBanGiay\src\main\java\GUI\Storage.java
@@ -9,7 +12,9 @@ D:\QLyBanGiay\QuanLyBanGiay\src\main\java\GUI\Schedule.java
 D:\QLyBanGiay\QuanLyBanGiay\src\main\java\GUI\Payroll.java
 D:\QLyBanGiay\QuanLyBanGiay\src\main\java\GUI\SignUp.java
 D:\QLyBanGiay\QuanLyBanGiay\src\main\java\DTO\Account.java
+D:\QLyBanGiay\QuanLyBanGiay\src\main\java\GUI\NVform.java
 D:\QLyBanGiay\QuanLyBanGiay\src\main\java\GUI\Account.java
 D:\QLyBanGiay\QuanLyBanGiay\src\main\java\GUI\Login.java
+D:\QLyBanGiay\QuanLyBanGiay\src\main\java\GUI\Schedule_NV.java
 D:\QLyBanGiay\QuanLyBanGiay\src\main\java\GUI\main.java
 D:\QLyBanGiay\QuanLyBanGiay\src\main\java\GUI\Supplier.java
