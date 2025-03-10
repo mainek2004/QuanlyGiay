@@ -4,6 +4,12 @@
  */
 package GUI;
 
+import DAO.JDBC;
+import java.sql.Connection;
+import javax.swing.JOptionPane;
+import java.sql.*;
+
+
 /**
  *
  * @author Mai
@@ -58,8 +64,6 @@ public class Login extends javax.swing.JFrame {
 
         jLabel5.setForeground(new java.awt.Color(204, 204, 204));
         jLabel5.setText("Step into style, walk with confidence");
-
-        jLabel7.setIcon(new javax.swing.ImageIcon("D:\\QLyBanGiay\\QuanLyBanGiay\\src\\main\\java\\picture\\R.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -123,6 +127,11 @@ public class Login extends javax.swing.JFrame {
         btnDN.setBackground(new java.awt.Color(203, 161, 106));
         btnDN.setForeground(new java.awt.Color(255, 255, 255));
         btnDN.setText("Sign In");
+        btnDN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDNActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -188,6 +197,49 @@ public class Login extends javax.swing.JFrame {
        dk.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnDNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDNActionPerformed
+        String username = txtName.getText();
+        String password = txtPass.getText();
+
+        // Kiểm tra tính hợp lệ của dữ liệu nhập vào
+        if (username.isEmpty() || password.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Vui lòng nhập tên người dùng và mật khẩu.", "Thông báo", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        // Thực hiện truy vấn SQL để kiểm tra thông tin đăng nhập
+        try (Connection con = JDBC.getConnection();
+             PreparedStatement ps = con.prepareStatement("SELECT * FROM TaiKhoan WHERE TenTK = ? AND MatKhau = ?")) {
+
+            ps.setString(1, username);
+            ps.setString(2, password);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    String loaitk = rs.getString("loaitk");
+                    if (loaitk.equals("Admin")) {
+                        // Nếu loại tài khoản là admin (loaitk = 1), mở giao diện admin
+                        main adminForm = new main();
+                        adminForm.setVisible(true);
+                        dispose(); // Đóng cửa sổ đăng nhập sau khi mở giao diện admin
+                    } else if (loaitk.equals("User")) {
+                        // Nếu loại tài khoản là nhân viên (loaitk = 2), mở giao diện nhân viên
+                        NVform nhanVienForm = new NVform();
+                        nhanVienForm.setVisible(true);
+                        dispose(); // Đóng cửa sổ đăng nhập sau khi mở giao diện nhân viên
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Loại tài khoản không hợp lệ.", "Lỗi", JOptionPane.ERROR_MESSAGE);
+                    }
+                } else {
+                    // Nếu không tìm thấy kết quả khớp, hiển thị thông báo lỗi
+                    JOptionPane.showMessageDialog(this, "Tên người dùng hoặc mật khẩu không chính xác.", "Lỗi", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Đã xảy ra lỗi khi đăng nhập.", "Lỗi", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnDNActionPerformed
 
     /**
      * @param args the command line arguments
